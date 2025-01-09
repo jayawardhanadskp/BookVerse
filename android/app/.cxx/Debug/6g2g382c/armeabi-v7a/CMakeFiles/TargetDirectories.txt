@@ -1,0 +1,2 @@
+/Users/iongroupspvtltd/StudioProjects/book_store_ma/android/app/.cxx/Debug/6g2g382c/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/iongroupspvtltd/StudioProjects/book_store_ma/android/app/.cxx/Debug/6g2g382c/armeabi-v7a/CMakeFiles/edit_cache.dir
