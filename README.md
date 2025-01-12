@@ -1,16 +1,16 @@
-# book_store_ma
+# BookVerse Mobile App
 
-A new Flutter project.
+This is a Flutter application that integrates with the BookVerse GraphQL API to display books, add new books, and manage authors. It features the ability to view books along with their authors' details and provides a form for adding new books to the system.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **View Books**: Displays a list of books along with their author information (name and biography).
+- **Add Books**: A form that allows users to add a new book with its title and author information.
+- **GraphQL Integration**: Utilizes GraphQL queries and mutations to interact with the BookVerse backend service for fetching and adding data.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter**: A cross-platform mobile development framework to build the application.
+- **GraphQL**: A query language for APIs to fetch and mutate data.
+- **GraphQL Flutter**: A package that provides GraphQL support for Flutter applications.
+- **BookVerse GraphQL API**: A backend service used to fetch book and author data and add new books.
