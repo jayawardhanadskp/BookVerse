@@ -50,40 +50,58 @@ class _AddBookState extends State<AddBook> {
             return Padding(
               padding: const EdgeInsets.all(10.0),
               child: Form(
-                  key: _formKey,
-                  child: Column(
-                    spacing: 10,
-                    children: [
-                      TextFormField(
-                        controller: _titleController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter book title';
-                          }
-                          return null;
-                        },
+                key: _formKey,
+                child: Column(
+                  spacing: 10,
+                  children: [
+                    TextFormField(
+                      controller: _titleController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                       ),
-                      TextFormField(
-                        controller: _authorController,
-                        decoration:
-                            InputDecoration(border: OutlineInputBorder()),
-                        validator: (v) {
-                          if (v == null || v.isEmpty) {
-                            return 'Please enter author name';
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(height: 10,),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('SUBMIT'),
-                      ),
-                    ],
-                  ),),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter book title';
+                        }
+                        return null;
+                      },
+                    ),
+                    TextFormField(
+                      controller: _authorController,
+                      decoration: InputDecoration(border: OutlineInputBorder()),
+                      validator: (v) {
+                        if (v == null || v.isEmpty) {
+                          return 'Please enter author name';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          final title = _titleController.text;
+                          final author = _authorController.text;
+
+                          RunMutation({
+                            "title": title,
+                            "authorId": author,
+                          });
+
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text('Book Added Sucessfully')));
+                          _titleController.clear();
+                          _authorController.clear();
+                        }
+                        return;
+                      },
+                      child: Text('SUBMIT'),
+                    ),
+                  ],
+                ),
+              ),
             );
           }),
     );
