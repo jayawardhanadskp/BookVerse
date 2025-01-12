@@ -1,7 +1,10 @@
+import 'package:book_store_ma/gql/graphql_client.dart';
 import 'package:book_store_ma/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  await initHiveForFlutter();
   runApp(MyApp());
 }
 
@@ -10,8 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
+    return GraphQLProvider(
+      client: GraphqlConfig.initializeClient(),
+      child: MaterialApp(
+        home: HomePage(),
+      ),
     );
   }
 }
